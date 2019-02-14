@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<style>
+body {margin: 0px;}
+#pageTopint {
+	background: teal; 
+    background: -o-linear-gradient(skyblue, #FFFFFF); 
+    background: -moz-linear-gradient(skyblue, #FFFFFF); 
+    background: linear-gradient(skyblue, #FFFFFF);
+	min-height: 600px;
+	width:100%; 
+	margin-left: 0%;
+/*	border: 1px red solid;*/
+} 
+@media screen and (max-width: 850px){
+#pageTopint {	width:100%; margin-left: 0%;}
+}
+#links {margin-left: 38%;}
+#links a{color: white; margin-left: 20px;}
+#loginform{width: 22%; float: left; margin-left: 38%; z-index: -1;
+/*border: 1px red solid;*/
+}
+#loginform input {float: right;}
+@media screen and (max-width: 850px){
+#loginform {width: 98%; float: left; margin-left: 0%;}
+}
+#loginbtn{ 
+width:30%;
+    text-decoration: none;	
+    margin-top: 3px;
+	font-size: 16px;
+    text-align: center;
+    border-radius: 4px;
+	float: right;
+}
+#loginstatus {
+	color: red;
+	margin-top: 1px;
+	font-size: 14px;
+}
+#refresh2 {float: left; text-decoration: none; font-weight: bold;}
+#refresh2 {float: left; text-decoration: none; font-weight: bold;}
+#log {font-weight: bold; color: green; margin-left: 38%;}
+#copy {float: left;}
+#dat {float: right;}
+</style>
+<script>
+function _(x){
+return document.getElementById(x);
+}
+function emptyElement(x){
+	_(x).innerHTML = "";
+}
+function login(){
+	var e = _("emailForLogin").value;
+	var p = _("password").value;
+	if(e == "" || p == ""){
+		_("loginstatus").innerHTML = "Fill out Email & Password";
+	}else {
+window.location="prof.html";
+
+
+	} 
+}
+</script>
+</head>
+<body>
+<div id="pageTopint">
+<br></br>
+<div id="log">&nbsp;&nbsp;&nbsp;National Election System<br><br><br></div>
+<div id="links">
+<a id="refresh2" href="index.html">Home</a> 
+<a id="refresh2" href="new.html">New Account</a>
+</div>
+<br><br><br><br>
+<div id="log">Login here</div>
+<br>
+<form id="loginform" onsubmit="return false;">  
+Username or Email<input type="text" id="emailForLogin" onFocus="emptyElement('loginstatus')" maxlength="88" />
+<br><br>
+Password<input type="password" id="password" onfocus="emptyElement('loginstatus')" maxlength="100">
+<br><br>			
+<button id="loginbtn" onclick="login() ">Log In</button>
+<br><br>
+<div id="loginstatus"></div> 
+</form>
+</div>
+<div id="copy">Copyright @ politico 2019</div>
+<div id="dat">Politico project</div>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<style>
+body {margin: 0px;}
+#pageTopint {
+	background: teal; 
+    background: -o-linear-gradient(skyblue, #FFFFFF); 
+    background: -moz-linear-gradient(skyblue, #FFFFFF); 
+    background: linear-gradient(skyblue, #FFFFFF);
+	min-height: 600px;
+	width:100%; 
+	margin-left: 0%
+/*	border: 1px red solid;*/
+} 
+@media screen and (max-width: 850px){
+#pageTopint {margin-left: 0%;}
+}
+#links {border-radius: 3px; float: left; margin-left: 18%;}
+@media screen and (max-width: 850px){
+#links {margin-left: 0%;}
+}
+#links a{color: white; margin-left: 20px; border: 1px green solid; border-radius: 3px; float: left; margin-top: 5px;}
+
+
+
+#refresh2 {float: left; text-decoration: none; font-weight: bold;}
+#refresh2 {float: left; text-decoration: none; font-weight: bold;}
+#log {font-weight: bold; color: green; text-align: center; /*border: 1px green solid*/;
+
+}
+#del {cursor: pointer; color: blue; margin-left: 20px;}
+#parties {width: 45%; float: left; border: 1px white solid;}
+@media screen and (max-width: 850px){
+#parties {margin-top: 20px;}
+}
+
+#parties a{margin-left: 36px;}
+#offices{width: 45%; float: left; border: 1px white solid; margin-left: 20px;}
+@media screen and (max-width: 850px){
+#offices {margin-top: 20px;}
+}
+
+#offices a{margin-left: 36px;}
+#titl {text-align: center; font-weight: bold; margin-bottom: 5px;}
+#titl2 {text-align: center; font-weight: bold; margin-bottom: 5px;}
+
+
+
+
+#log {font-weight: bold; color: green;}
+#aplicationform{width: 99%; height: 200px; float: left; margin-left: 1%; z-index: -1; 
+/*border: 1px red solid;*/
+}
+#aplicationform input {float: left;}
+
+
+@media screen and (min-width: 850px){
+#aplicationform {margin-right: 5%;}
+}
+#titl2 {text-align: center; font-weight: bold; margin-bottom: 5px; float: left; margin-left: 43%; }
+
+
+@media screen and (max-width: 850px){
+#titl2 {margin-left: 0%;}
+}
+
+
+#loginbtn{ 
+width:30%;
+    text-decoration: none;	
+    margin-top: 3px;
+	font-size: 16px;
+    text-align: center;
+    border-radius: 4px;
+	float: left;
+	margin-left: 43%;
+	width: 90px;
+}
+#loginstatus {
+	color: red;
+	margin-top: 1px;
+	font-size: 14px;
+	text-align: center;
+}
+#copy {float: left;}
+#dat {float: right;}
+</style>
+<script>
+function _(x){
+return document.getElementById(x);
+}
+function emptyElement(x){
+	_(x).innerHTML = "";
+}
+function login(){
+	var yp = _("yparty").value;
+	var go = _("goffice").value;
+	if(yp == "" || go == ""){
+		_("loginstatus").innerHTML = "Choose a politician and the office you give him/her plz";
+	}
+else {
+_("loginstatus").innerHTML = "Done";
+	}	
+}
+</script>
+</head>
+<body>
+<div id="pageTopint">
+<br></br>
+<div id="links">
+<a id="refresh2" href="commision.html">Electoral commision (Admin)</a> 
+<a id="refresh2" href="politician.html">Politician</a>
+<a id="refresh2" href="citizen.html">Citizen</a>
+<a id="refresh2" href="results.html">Results</a>
+<a id="refresh2" href="pass.html">Change password</a>
+<a id="refresh2" href="index.html">Logout</a>
+</div>
+<br><br><br><br>
+<div id="parties">
+<div id="titl">Polical paties</div>
+1.Paty A 
+<br>
+2.Paty B 
+<br>
+3.Paty C 
+</div>
+
+<div id="offices">
+<div id="titl">Polical offices</div>
+1.Office A  
+<br>
+2.Office B
+<br>
+3.Office C  
+</div>
+<form id="aplicationform" onsubmit="return false;"> 
+<br><br>
+<div id="log">Vote here below:</div>
+<br>
+<div id="titl2">Politician</div>
+ <select type="text" id="yparty" onFocus="emptyElement('loginstatus')" maxlength="88">
+   <option value=""></option>
+  <option value="electio">Politician A </option>
+  <option value="candidate">Politician B</option>
+  <option value="citizen">Politician C</option>
+</select>
+
+<br><br>
+<div id="titl2">Government Office</div>
+ <select type="text" id="goffice" onFocus="emptyElement('loginstatus')" maxlength="88">
+   <option value=""></option>
+  <option value="electio">Office A</option>
+  <option value="candidate">Office B</option>
+  <option value="citizen">Office C</option>
+</select>
+
+<br><br>
+<button id="loginbtn" onclick="login() ">Confirm</button>
+<br><br>
+<div id="loginstatus"></div> 
+</form>
+</div>
+
+<div id="copy">Copyright @ politico 2019</div>
+<div id="dat">Politico project</div>
+</body>
+</html>

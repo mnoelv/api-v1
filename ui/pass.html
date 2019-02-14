@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<style>
+body {margin: 0px;}
+#pageTopint {
+  background: teal; 
+    background: -o-linear-gradient(skyblue, #FFFFFF); 
+    background: -moz-linear-gradient(skyblue, #FFFFFF); 
+    background: linear-gradient(skyblue, #FFFFFF);
+  min-height: 600px;
+  width:100%; 
+  margin-left: 0%
+/*  border: 1px red solid;*/
+} 
+@media screen and (max-width: 850px){
+#pageTopint {margin-left: 0%;}
+}
+#links {border-radius: 3px; float: left; margin-left: 18%;}
+@media screen and (max-width: 850px){
+#links {margin-left: 0%;}
+}
+#links a{color: white; margin-left: 20px; border: 1px green solid; border-radius: 3px; float: left; margin-top: 5px;}
+
+
+
+#loginform{width: 25%; height: 90px; float: left; margin-left: 30%; z-index: -1; 
+/*border: 1px red solid;*/
+}
+@media screen and (max-width: 850px){
+#loginform {	width:100%;}
+}
+#loginform input {float: right;}
+#btn{ 
+width:30%;
+    text-decoration: none;	
+    margin-top: 3px;
+	font-size: 16px;
+    text-align: center;
+    border-radius: 4px;
+	float: right;
+}
+#status {
+	color: red;
+	margin-top: 1px;
+	font-size: 14px;
+}
+#refresh2 {float: left; text-decoration: none; font-weight: bold;}
+#refresh2 {float: left; text-decoration: none; font-weight: bold;}
+#log {font-weight: bold; color: green; margin-left: 30%;}
+</style>
+<script>
+function _(x){
+return document.getElementById(x);
+}
+function emptyElement(x){
+	_(x).innerHTML = "";
+}
+function login(){
+	var p1 = _("pass1").value;
+	var p2 = _("pass2").value;
+		var p3 = _("pass3").value;		
+		if
+	(p1 == "" || p2 == "" || p3 == ""){
+		_("status").innerHTML = "Fill out all fields";
+	}
+	else if
+			(p2 != p3){
+		_("status").innerHTML = "New passwords do not match";
+	} 
+else {
+window.location="index.html";
+	}
+
+	
+}
+</script>
+</head>
+<body>
+<div id="pageTopint">
+<br></br>
+<div id="links">
+<a id="refresh2" href="commision.html">Electoral commision (Admin)</a> 
+<a id="refresh2" href="politician.html">Politician</a>
+<a id="refresh2" href="citizen.html">Citizen</a>
+<a id="refresh2" href="results.html">Results</a>
+<a id="refresh2" href="pass.html">Change password</a>
+<a id="refresh2" href="index.html">Logout</a>
+</div>
+<br><br><br><br>
+<div id="log">Requirements</div>
+<br>
+<form id="loginform" onsubmit="return false;">  
+Current password<input type="text" id="pass1" onFocus="emptyElement('tatus')" maxlength="88" />
+<br><br>
+New password<input type="password" id="pass2" onfocus="emptyElement('status')" maxlength="100">
+<br><br>
+Confirm New password<input type="password" id="pass3" onfocus="emptyElement('status')" maxlength="100">
+<br><br>
+<button id="btn" onclick="login() ">Reset</button>
+<br><br>
+<div id="status"></div> 
+</form>
+</div>
+</body>
+</html>
