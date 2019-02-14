@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<style>
+body {margin: 0px;}
+#pageTopint {
+	background: teal; 
+    background: -o-linear-gradient(skyblue, #FFFFFF); 
+    background: -moz-linear-gradient(skyblue, #FFFFFF); 
+    background: linear-gradient(skyblue, #FFFFFF);
+	min-height: 600px;
+	width:99.5%; 
+	margin-left: 00%;
+	/*border: 1px red solid;*/
+} 
+@media screen and (max-width: 850px){
+#pageTopint {	width:100%; margin-left: 0%;}
+}
+#links { /*border: 1px red solid;*/ border-radius: 3px; float: left; margin-left: 18%;}
+@media screen and (max-width: 850px){
+#links {margin-left: 0%;}
+}
+#links a{color: white; margin-left: 20px; border: 1px green solid; border-radius: 3px; float: left; margin-top: 5px;}
+#pp{width: 50%; height: 60px; margin-left: 25%; z-index: -1; 
+/*border: 1px red solid;*/
+}
+
+
+
+
+#pp input {margin-left: 10px;}
+@media screen and (max-width: 850px){
+#pp {width: 98%; height: 60px; margin-left: 3px;}
+}
+
+
+#ppb{ 
+width:40px;
+    text-decoration: none;	
+	font-size: 16px;
+    text-align: center;
+    border-radius: 4px;
+	/*border: 1px red solid;*/
+}
+
+
+#pob{ 
+width:40px;
+    text-decoration: none;	
+	font-size: 16px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+
+#status1 {
+	color: red;
+	margin-top: 1px;
+	font-size: 14px;
+}
+#status2 {
+	color: red;
+	margin-top: 1px;
+	font-size: 14px;
+}
+#status3 {
+	color: red;
+	margin-top: 1px;
+	font-size: 14px;
+}
+#refresh2 {float: left; text-decoration: none; font-weight: bold;}
+#refresh2 {float: left; text-decoration: none; font-weight: bold;}
+
+
+
+#log {font-weight: bold; color: green; margin-left: 32%;}
+#del {cursor: pointer; color: blue; margin-left: 20px;}
+#parties {width: 45%; float: left; border: 1px white solid; margin-left: 3%; margin-top: 20px;}
+
+@media screen and (max-width: 850px){
+#parties {width: 95%; margin-left: 0%;}
+}
+#parties a{margin-left: 36px;}
+
+#offices{width: 45%; float: left; border: 1px white solid; margin-left: 20px; margin-top: 20px;}
+@media screen and (max-width: 850px){
+#offices {width: 95%; margin-top: 20px;  margin-left: 2px;}
+}
+#offices a{margin-left: 36px;}
+#titl {text-align: center; font-weight: bold; margin-bottom: 5px;}
+#titl2 {text-align: center; font-weight: bold; margin-bottom: 5px;}
+#copy {float: left;}
+#dat {float: right;}
+</style>
+<script>
+function _(x){
+return document.getElementById(x);
+}
+function emptyElement(x){
+	_(x).innerHTML = "";
+}
+function add_pp(){
+	var pp = _("ppty").value;
+	if(pp == ""){
+		_("status1").innerHTML = "Fill out political party";
+	}
+else {
+_("status1").innerHTML = "Done";
+	}	
+}  
+function add_po(){
+	var po = _("pos").value;
+	if(po == ""){
+		_("status2").innerHTML = "Fill out political office";
+	}
+else {
+_("status2").innerHTML = "Done";
+	}	
+}
+
+function add_ids(){
+	var ids = _("ids").value;
+	if(ids == ""){
+		_("status3").innerHTML = "Fill out user id number plz";
+	}
+else {
+_("status3").innerHTML = "Done";
+	}	
+}
+</script>
+</head>
+<body>
+<div id="pageTopint">
+<br></br>
+<div id="links">
+<a id="refresh2" href="commision.html">Electoral commision (Admin)</a> 
+<a id="refresh2" href="politician.html">Politician</a>
+<a id="refresh2" href="citizen.html">Citizen</a>
+<a id="refresh2" href="results.html">Results</a>
+<a id="refresh2" href="pass.html">Change password</a>
+<a id="refresh2" href="index.html">Logout</a>
+</div>
+<br><br><br><br>
+<div id="log">Requirements</div>
+<br>
+<form id="pp" onsubmit="return false;">  
+Create political party.<input type="text" id="ppty" onFocus="emptyElement('status1')" maxlength="88" />
+<button id="ppb" onclick="add_pp() ">Add</button>
+<br>
+<div id="status1"></div> 
+</form>
+<form id="pp" onsubmit="return false;">  
+Create new political offices<input type="text" id="pos" onfocus="emptyElement('status2')" maxlength="100">
+<button id="pob" onclick="add_po() ">Add</button>
+<br>
+<div id="status2"></div> 
+</form>
+
+<form id="pp" onsubmit="return false;">  
+Add citizen id number<input type="text" id="ids" onfocus="emptyElement('status2')" maxlength="100">
+<button id="pob" onclick="add_ids() ">Add</button>
+<br>
+<div id="status3"></div> 
+</form>
+
+<div id="parties">
+<div id="titl">Polical paties</div>
+1.Paty A <a href="#">Edit</a> <span id="del" onclick="delete()">Delete</span>
+<br>
+2.Paty B <a href="#">Edit</a> <span id="del" onclick="delete()">Delete</span>
+<br>
+3.Paty C <a href="#">Edit</a> <span id="del" onclick="delete()">Delete</span>
+</div>
+
+
+<div id="offices">
+<div id="titl2">Government Offices</div>
+1.Office A <a href="#">Edit</a> <span id="del" onclick="delete()">Delete</span>
+<br>
+2.Office B <a href="#">Edit</a> <span id="del" onclick="delete()">Delete</span>
+<br>
+3.Office C <a href="#">Edit</a> <span id="del" onclick="delete()">Delete</span>
+</div>
+
+
+</div>
+
+<div id="copy">Copyright @ politico 2019</div>
+<div id="dat">Politico project</div>
+</body>
+</html>

@@ -32,7 +32,7 @@ app.all('*', (req, res) => {
 res.status(404).json({ error: 'Access Failed' });
 });
 
-app.listen(7000, () => {
-  console.log('Server started at port: 7000');
+app.listen(8080, () => {
+  console.log('Server started at port: 8080');
 });
 
